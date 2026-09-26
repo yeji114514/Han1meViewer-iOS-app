@@ -61,3 +61,6 @@
 7. 增加 Apple 签名 workflow
 
 > 本项目仅提供技术迁移骨架；不会实现绕过验证码、Cloudflare、DRM 或其他访问控制的机制。
+
+## iOS 16 compatibility
+This revision targets iOS 16.0 and avoids iOS 17-only `ContentUnavailableView` APIs.
