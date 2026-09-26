@@ -1,0 +1,58 @@
+name: iOS Build
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "26.0"
+
+      - name: Build unsigned app
+        run: |
+          set -euo pipefail
+          xcodebuild \
+            -project Han1meViewer-iOS.xcodeproj \
+            -scheme Han1meViewer-iOS \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            DEVELOPMENT_TEAM="" \
+            clean build
+
+      - name: Package unsigned IPA
+        run: |
+          set -euo pipefail
+          APP_PATH="build/Build/Products/Release-iphoneos/Han1meViewer-iOS.app"
+          test -d "$APP_PATH"
+          mkdir -p Payload
+          cp -R "$APP_PATH" Payload/
+          /usr/bin/zip -qry Han1meViewer-iOS-unsigned.ipa Payload
+          rm -rf Payload
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: Han1meViewer-iOS-unsigned
+          path: Han1meViewer-iOS-unsigned.ipa
+          if-no-files-found: error
+
+      - name: Upload app bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: Han1meViewer-iOS-app
+          path: build/Build/Products/Release-iphoneos/Han1meViewer-iOS.app
+          if-no-files-found: error
