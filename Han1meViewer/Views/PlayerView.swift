@@ -11,10 +11,10 @@ struct PlayerView: View {
                 VideoPlayer(player: player)
                     .ignoresSafeArea(edges: .bottom)
             } else {
-                ContentUnavailableView(
+                EmptyStateView(
                     "暂无播放地址",
                     systemImage: "play.slash",
-                    description: Text("播放器已经预留，下一阶段接入视频源解析。")
+                    message: "播放器已经预留，下一阶段接入视频源解析。"
                 )
             }
         }

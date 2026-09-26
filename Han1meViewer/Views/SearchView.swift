@@ -5,10 +5,10 @@ struct SearchView: View {
 
     var body: some View {
         NavigationStack {
-            ContentUnavailableView(
+            EmptyStateView(
                 "搜索",
                 systemImage: "magnifyingglass",
-                description: Text("搜索接口将在网络层完成后接入。")
+                message: "搜索接口将在网络层完成后接入。"
             )
             .navigationTitle("搜索")
             .searchable(text: $query, prompt: "搜索")

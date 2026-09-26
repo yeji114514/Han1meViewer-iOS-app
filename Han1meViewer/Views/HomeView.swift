@@ -7,10 +7,10 @@ struct HomeView: View {
         NavigationStack {
             Group {
                 if model.videos.isEmpty {
-                    ContentUnavailableView(
+                    EmptyStateView(
                         "第一版骨架",
                         systemImage: "play.rectangle",
-                        description: Text("网络层和页面解析器将在下一阶段接入。")
+                        message: "网络层和页面解析器将在下一阶段接入。"
                     )
                 } else {
                     List(model.videos) { video in

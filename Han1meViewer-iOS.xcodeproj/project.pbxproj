@@ -50,6 +50,7 @@
 		A20000000000000000000019 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A20000000000000000000020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A20000000000000000000021 /* Han1meViewer-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Han1meViewer-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20000000000000000000022 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +89,7 @@
 			sourceTree = "<group>";
 		};
 		A40000000000000000000004 /* App */ = { isa = PBXGroup; children = ( A20000000000000000000001, A20000000000000000000002, A20000000000000000000003 ); path = App; sourceTree = "<group>"; };
-		A40000000000000000000005 /* Views */ = { isa = PBXGroup; children = ( A20000000000000000000004, A20000000000000000000005, A20000000000000000000006, A20000000000000000000007, A20000000000000000000008, A20000000000000000000009, A20000000000000000000010, A20000000000000000000011 ); path = Views; sourceTree = "<group>"; };
+		A40000000000000000000005 /* Views */ = { isa = PBXGroup; children = ( A20000000000000000000022 /* EmptyStateView.swift */, A20000000000000000000004, A20000000000000000000005, A20000000000000000000006, A20000000000000000000007, A20000000000000000000008, A20000000000000000000009, A20000000000000000000010, A20000000000000000000011 ); path = Views; sourceTree = "<group>"; };
 		A40000000000000000000006 /* Models */ = { isa = PBXGroup; children = ( A20000000000000000000012 ); path = Models; sourceTree = "<group>"; };
 		A40000000000000000000007 /* ViewModels */ = { isa = PBXGroup; children = ( A20000000000000000000013, A20000000000000000000014 ); path = ViewModels; sourceTree = "<group>"; };
 		A40000000000000000000008 /* Network */ = { isa = PBXGroup; children = ( A20000000000000000000015, A20000000000000000000016 ); path = Network; sourceTree = "<group>"; };
@@ -141,13 +142,13 @@
 			A10000000000000000000007, A10000000000000000000008, A10000000000000000000009,
 			A10000000000000000000010, A10000000000000000000011, A10000000000000000000012,
 			A10000000000000000000013, A10000000000000000000014, A10000000000000000000015,
-			A10000000000000000000016, A10000000000000000000017, A10000000000000000000018,
+			A10000000000000000000016, A10000000000000000000017, A10000000000000000000018, A10000000000000000000022,
 		); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A80000000000000000000001 /* Debug */ = { isa = XCBuildConfiguration; buildSettings = { IPHONEOS_DEPLOYMENT_TARGET = 17.0; SWIFT_VERSION = 6.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
-		A80000000000000000000002 /* Release */ = { isa = XCBuildConfiguration; buildSettings = { IPHONEOS_DEPLOYMENT_TARGET = 17.0; SWIFT_VERSION = 6.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+		A80000000000000000000001 /* Debug */ = { isa = XCBuildConfiguration; buildSettings = { IPHONEOS_DEPLOYMENT_TARGET = 16.0; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+		A80000000000000000000002 /* Release */ = { isa = XCBuildConfiguration; buildSettings = { IPHONEOS_DEPLOYMENT_TARGET = 16.0; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
 		A80000000000000000000003 /* Debug target */ = { isa = XCBuildConfiguration; buildSettings = {
 			SDKROOT = iphoneos;
 			SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -165,9 +166,9 @@
 			PRODUCT_BUNDLE_IDENTIFIER = "local.han1meviewer.ios";
 			PRODUCT_NAME = "$(TARGET_NAME)";
 			SWIFT_EMIT_LOC_STRINGS = YES;
-			SWIFT_VERSION = 6.0;
+			SWIFT_VERSION = 5.0;
 			TARGETED_DEVICE_FAMILY = "1,2";
-			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 		}; name = Debug; };
 		A80000000000000000000004 /* Release target */ = { isa = XCBuildConfiguration; buildSettings = {
 			SDKROOT = iphoneos;
@@ -184,9 +185,9 @@
 			PRODUCT_BUNDLE_IDENTIFIER = "local.han1meviewer.ios";
 			PRODUCT_NAME = "$(TARGET_NAME)";
 			SWIFT_EMIT_LOC_STRINGS = YES;
-			SWIFT_VERSION = 6.0;
+			SWIFT_VERSION = 5.0;
 			TARGETED_DEVICE_FAMILY = "1,2";
-			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 		}; name = Release; };
 /* End XCBuildConfiguration section */
 
